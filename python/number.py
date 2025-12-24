@@ -17,6 +17,8 @@ while True:
                 print(n,"is even number")
             else:
                 print(n,"is odd number")
+        case _:
+            print("Invalid choice!")
     user_choice=input("Do you want to continue?")
     if user_choice=='yes' or user_choice=='Yes':
         continue
