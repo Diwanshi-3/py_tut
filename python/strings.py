@@ -1,0 +1,21 @@
+data = "  User:john_doe123 | Email:John.Doe123@gmail.com | Score: 89.567  "
+data.isspace()
+data_clean=data.strip().lower()
+print(f"{data_clean}")
+start=data_clean.find("user:")+len("user:")
+end=data_clean.find("|")
+username=data_clean[start:end].strip()
+print(f"Username:{username}")
+start=data_clean.find("email:")+len("email:")
+end=data_clean.find("|",start)
+email=(data_clean[start:end].strip())
+print(f"Email:{email}")
+start=data_clean.find("score:")+len("score:")
+Score=data_clean[start:].strip()
+Score1=float(Score)
+print(f"Score:{Score1:.2f}")
+email_valid=email.count("@")==1 and "." in email[email.find("@"):]
+print(f"Email_Valid:{email_valid}")
+at_index=email.find("@")
+masked_email="*" * at_index + email[at_index:]
+print(f"Masked_email:{masked_email}")
