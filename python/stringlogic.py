@@ -1,0 +1,25 @@
+log = "  ID=EMP1023 || Name=Riya_Sharma || Dept=Engineering || Salary= 75432.859  "
+data_clean=log.strip()
+start=data_clean.find("ID=")+len("ID=")
+end=data_clean.find("||",start)
+emp_id=data_clean[start:end].strip()
+start=data_clean.find("Name=")+len("Name=")
+end=data_clean.find("||",start)
+name=data_clean[start:end].strip()
+start=data_clean.find("Dept=")+len("Dept=")
+end=data_clean.find("||",start)
+Dept=data_clean[start:end].strip()
+start=data_clean.find("Salary=")+len("Salary=")
+Salary=data_clean[start:].strip()
+print(f"EMP_ID is {emp_id}")
+print(f"Name is {name}")
+print(f"Dept is {Dept}")
+print(f"Salary is {Salary}")
+at_index=emp_id.find("1023")
+mask_emp_id="*"*at_index +emp_id[at_index:]
+print(f"mask_emp_id is {mask_emp_id}")
+print(name.lower())
+Salary=float(Salary)
+valid_record = name.isidentifier() and emp_id.startswith("EMP") and Salary > 50000
+print(valid_record)
+
